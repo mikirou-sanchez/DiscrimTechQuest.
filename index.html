@@ -1,40 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DiscrimTechQuest</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>DiscrimTechQuest - Hard Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+        }
+        #quiz-container {
+            margin: 50px auto;
+            padding: 20px;
+            width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        button {
+            display: block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #b2ebf2;
+        }
+    </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>DiscrimTechQuest</h1>
-      <p class="subtitle">Learn how technology and democracy help reduce discrimination</p>
-    </header>
-
-    <section class="stats">
-      <div id="lives" class="lives" aria-live="polite">❤❤❤</div>
-      <div id="score" class="score">Score: 0</div>
-    </section>
-
-    <section id="question-box" class="card">
-      <p id="question" class="question">Loading...</p>
-      <div id="options" class="options"></div>
-    </section>
-
-    <div class="controls">
-      <button id="next-btn" class="btn" hidden>Next</button>
-      <button id="restart-btn" class="btn secondary" hidden>Restart</button>
+    <h1>DiscrimTechQuest - Hard Mode</h1>
+    <div id="quiz-container">
+        <p id="question"></p>
+        <div id="options"></div>
+        <p id="feedback"></p>
+        <p id="lives"></p>
+        <p id="score"></p>
+        <button id="next-btn" style="display:none">Next</button>
     </div>
 
-    <p id="feedback" class="feedback" aria-live="polite"></p>
+    <script>
+        const questions = [
+            {
+                question: "Which mechanism allows citizens to systematically report discriminatory practices in society?", 
+                options:["A. Local newspaper","B. Digital reporting platform","C. Social media gossip","D. Radio broadcasts"], 
+                answer:"b"
+            },
+            {
+                question: "Which type of governance ensures both legal equality and effective civic participation?", 
+                options:["A. Autocracy","B. Representative democracy","C. Constitutional monarchy","D. Anarchy"], 
+                answer:"b"
+            },
+            {
+                question: "To minimize systemic discrimination, which behavior should individuals consciously avoid?", 
+                options:["A. Spreading stereotypes or misinformation","B. Participating in educational programs","C. Volunteering in communities","D. Advocating for equal rights"], 
+                answer:"a"
+            },
+            {
+                question: "Which of the following actions most effectively promotes social respect and equitable treatment?", 
+                options:["A. Implementing inclusive policies","B. Favoritism towards select groups","C. Ignoring existing rules","D. Gossiping about minorities"], 
+                answer:"a"
+            },
+            {
+                question: "How can technology contribute substantively to reducing social discrimination?", 
+                options:["A. Amplifying biased narratives","B. Spreading awareness and verified resources","C. Limiting access to marginalized voices","D. Promoting misinformation"], 
+                answer:"b"
+            },
+            {
+                question: "Which human trait is critical for understanding and empathizing with marginalized populations?", 
+                options:["A. Empathy","B. Fear","C. Envy","D. Indifference"], 
+                answer:"a"
+            },
+            {
+                question: "Which form of discourse best amplifies the voices of underrepresented communities?", 
+                options:["A. Public forums and constructive dialogue","B. Private discussions only","C. Silent protests with no outreach","D. Secret lobbying"], 
+                answer:"a"
+            },
+            {
+                question: "Actively reporting discriminatory practices primarily contributes to:", 
+                options:["A. Justice and social accountability","B. Chaos and disorder","C. Ignorance of societal issues","D. Uncontrolled conflict"], 
+                answer:"a"
+            },
+            {
+                question: "Which legal right guarantees citizens the ability to vote and express their opinions freely?", 
+                options:["A. Freedom of expression and suffrage","B. Absolute obedience to authorities","C. Restricted civic participation","D. Subjugation"], 
+                answer:"a"
+            },
+            {
+                question: "Maintaining emotional balance and self-confidence is most effective in reducing which societal problem?", 
+                options:["A. Prejudice and discriminatory behavior","B. Casual friendships","C. Personal happiness","D. Random acts of kindness"], 
+                answer:"a"
+            }
+        ];
 
-    <footer class="footer">
-      <small>Created by Jerónimo — Educational quiz about tech, democracy & emotions</small>
-    </footer>
-  </main>
+        let current = 0;
+        let lives = 3;
+        let score = 0;
 
-  <script src="script.js"></script>
+        const questionEl = document.getElementById("question");
+        const optionsEl = document.getElementById("options");
+        const feedbackEl = document.getElementById("feedback");
+        const livesEl = document.getElementById("lives");
+        const scoreEl = document.getElementById("score");
+        const nextBtn = document.getElementById("next-btn");
+
+        function showQuestion() {
+            feedbackEl.textContent = "";
+            nextBtn.style.display = "none";
+            const q = questions[current];
+            questionEl.textContent = q.question;
+            optionsEl.innerHTML = "";
+            q.options.forEach(option => {
+                const btn = document.createElement("button");
+                btn.textContent = option;
+                btn.onclick = () => checkAnswer(option[0].toLowerCase());
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(choice) {
+            const buttons = optionsEl.querySelectorAll("button");
+            buttons.forEach(btn => btn.disabled = true);
+
+            if(choice === questions[current].answer){
+                score++;
+                feedbackEl.textContent = "Correct!";
+            } else {
+                lives--;
+                feedbackEl.textContent = "Wrong!";
+            }
+            livesEl.textContent = `Lives: ${"❤️".repeat(lives)}`;
+            scoreEl.textContent = `Score: ${score}`;
+            nextBtn.style.display = "inline";
+
+            if(lives === 0){
+                feedbackEl.textContent = `Game Over! Final Score: ${score}`;
+                optionsEl.innerHTML = "";
+                nextBtn.style.display = "none";
+            }
+        }
+
+        nextBtn.addEventListener("click", ()=>{
+            current++;
+            if(current < questions.length && lives > 0){
+                showQuestion();
+            } else if(lives > 0){
+                feedbackEl.textContent = `Congratulations! Final Score: ${score}`;
+                optionsEl.innerHTML = "";
+                nextBtn.style.display = "none";
+            }
+        });
+
+        livesEl.textContent = `Lives: ${"❤️".repeat(lives)}`;
+        scoreEl.textContent = `Score: ${score}`;
+        showQuestion();
+    </script>
 </body>
 </html>
