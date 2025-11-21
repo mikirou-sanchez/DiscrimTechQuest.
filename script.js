@@ -1,52 +1,52 @@
 const questions = [
   {
-    question: "Which platform allows citizens to formally report unfair treatment online?", 
-    options:["A. Newspaper","B. TV news","C. Digital platform","D. Radio broadcast"], 
-    answer:"c"
-  },
-  {
-    question: "What type of political system safeguards equality and citizen participation?", 
-    options:["A. Monarchy","B. Democracy","C. Dictatorship","D. Anarchy"], 
+    question: "Which mechanism allows citizens to systematically report discriminatory practices in society?", 
+    options:["A. Local newspaper","B. Digital reporting platform","C. Social media gossip","D. Radio broadcasts"], 
     answer:"b"
   },
   {
-    question: "To effectively reduce discrimination, one should avoid which of the following?", 
-    options:["A. Misinformation","B. Volunteering","C. Education programs","D. Empathy exercises"], 
+    question: "Which type of governance ensures both legal equality and effective civic participation?", 
+    options:["A. Autocracy","B. Representative democracy","C. Constitutional monarchy","D. Anarchy"], 
+    answer:"b"
+  },
+  {
+    question: "To minimize systemic discrimination, which behavior should individuals consciously avoid?", 
+    options:["A. Spreading stereotypes or misinformation","B. Participating in educational programs","C. Volunteering in communities","D. Advocating for equal rights"], 
     answer:"a"
   },
   {
-    question: "Supporting which action promotes respect and equal treatment among people?", 
-    options:["A. Gossiping","B. Upholding equal rights","C. Cheating","D. Ignoring rules"], 
+    question: "Which of the following actions most effectively promotes social respect and equitable treatment?", 
+    options:["A. Implementing inclusive policies","B. Favoritism towards select groups","C. Ignoring existing rules","D. Gossiping about minorities"], 
+    answer:"a"
+  },
+  {
+    question: "How can technology contribute substantively to reducing social discrimination?", 
+    options:["A. Amplifying biased narratives","B. Spreading awareness and verified resources","C. Limiting access to marginalized voices","D. Promoting misinformation"], 
     answer:"b"
   },
   {
-    question: "How can technology most effectively contribute to reducing social discrimination?", 
-    options:["A. Causing confusion","B. Spreading awareness","C. Hiding information","D. Limiting access"], 
-    answer:"b"
+    question: "Which human trait is critical for understanding and empathizing with marginalized populations?", 
+    options:["A. Empathy","B. Fear","C. Envy","D. Indifference"], 
+    answer:"a"
   },
   {
-    question: "Which human emotion plays the largest role in understanding and supporting others?", 
-    options:["A. Anger","B. Envy","C. Empathy","D. Fear"], 
-    answer:"c"
+    question: "Which form of discourse best amplifies the voices of underrepresented communities?", 
+    options:["A. Public forums and constructive dialogue","B. Private discussions only","C. Silent protests with no outreach","D. Secret lobbying"], 
+    answer:"a"
   },
   {
-    question: "Public discourse that amplifies marginalized voices is considered:", 
-    options:["A. Silent","B. Private","C. Public","D. Secret"], 
-    answer:"c"
+    question: "Actively reporting discriminatory practices primarily contributes to:", 
+    options:["A. Justice and social accountability","B. Chaos and disorder","C. Ignorance of societal issues","D. Uncontrolled conflict"], 
+    answer:"a"
   },
   {
-    question: "Reporting unjust practices mainly contributes to:", 
-    options:["A. Violence","B. Ignorance","C. Justice","D. Chaos"], 
-    answer:"c"
+    question: "Which legal right guarantees citizens the ability to vote and express their opinions freely?", 
+    options:["A. Freedom of expression and suffrage","B. Absolute obedience to authorities","C. Restricted civic participation","D. Subjugation"], 
+    answer:"a"
   },
   {
-    question: "Which right ensures individuals can vote and freely express their opinions?", 
-    options:["A. Obedience","B. Freedom","C. Control","D. Slavery"], 
-    answer:"b"
-  },
-  {
-    question: "Maintaining self-confidence and emotional balance reduces:", 
-    options:["A. Prejudice","B. Friendship","C. Happiness","D. Kindness"], 
+    question: "Maintaining emotional balance and self-confidence is most effective in reducing which societal problem?", 
+    options:["A. Prejudice and discriminatory behavior","B. Casual friendships","C. Personal happiness","D. Random acts of kindness"], 
     answer:"a"
   }
 ];
