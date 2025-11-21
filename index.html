@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DiscrimTechQuest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>DiscrimTechQuest</h1>
+      <p class="subtitle">Learn how technology and democracy help reduce discrimination</p>
+    </header>
+
+    <section class="stats">
+      <div id="lives" class="lives" aria-live="polite">❤❤❤</div>
+      <div id="score" class="score">Score: 0</div>
+    </section>
+
+    <section id="question-box" class="card">
+      <p id="question" class="question">Loading...</p>
+      <div id="options" class="options"></div>
+    </section>
+
+    <div class="controls">
+      <button id="next-btn" class="btn" hidden>Next</button>
+      <button id="restart-btn" class="btn secondary" hidden>Restart</button>
+    </div>
+
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+
+    <footer class="footer">
+      <small>Created by Jerónimo — Educational quiz about tech, democracy & emotions</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

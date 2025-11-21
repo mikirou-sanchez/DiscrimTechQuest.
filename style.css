@@ -1,0 +1,121 @@
+/* style.css — simple modern UI (ChromeOS-ish feel) */
+:root{
+  --bg: #e9f5f3;
+  --card: #ffffff;
+  --accent: #00796b;
+  --muted: #6b6b6b;
+  --radius: 14px;
+  --gap: 14px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg),#ffffff);
+  color:#07333a;
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:720px;
+}
+
+header{
+  text-align:left;
+  margin-bottom:8px;
+}
+h1{
+  margin:0 0 6px 0;
+  font-size:28px;
+}
+.subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.stats{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0 18px 0;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 6px 18px rgba(3,27,26,0.06);
+}
+
+.question{
+  font-size:18px;
+  margin:0 0 12px 0;
+  min-height:48px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.options button{
+  border:1px solid rgba(0,0,0,0.06);
+  background:#f3fffb;
+  padding:12px;
+  font-size:15px;
+  border-radius:10px;
+  cursor:pointer;
+  text-align:left;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.options button:hover{ transform:translateY(-3px) }
+.options button[disabled]{ opacity:0.6; cursor:default; transform:none }
+
+.controls{
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.secondary{
+  background:transparent;
+  color:var(--accent);
+  border:2px solid rgba(0,0,0,0.06);
+}
+
+.feedback{
+  margin-top:10px;
+  min-height:22px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.footer{
+  margin-top:18px;
+  color:var(--muted);
+  text-align:center;
+  font-size:12px;
+}
+
+/* mobile tweaks */
+@media (max-width:480px){
+  .options{ grid-template-columns: 1fr; }
+}
