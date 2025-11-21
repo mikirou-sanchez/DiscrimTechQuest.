@@ -23,16 +23,16 @@
 
 <script>
 const questions = [
-    {question:"Which mechanism allows citizens to systematically report discriminatory practices in society?", options:["Social media gossip","Digital reporting platform","Radio broadcasts","Local newspaper"], answer:"Digital reporting platform"},
-    {question:"Which type of governance ensures both legal equality and effective civic participation?", options:["Constitutional monarchy","Autocracy","Anarchy","Representative democracy"], answer:"Representative democracy"},
-    {question:"To minimize systemic discrimination, which behavior should individuals consciously avoid?", options:["Advocating for equal rights","Spreading stereotypes or misinformation","Participating in educational programs","Volunteering in communities"], answer:"Spreading stereotypes or misinformation"},
-    {question:"Which action most effectively promotes social respect and equitable treatment?", options:["Gossiping about minorities","Ignoring existing rules","Implementing inclusive policies","Favoritism towards select groups"], answer:"Implementing inclusive policies"},
-    {question:"How can technology contribute substantively to reducing social discrimination?", options:["Spreading awareness and verified resources","Promoting misinformation","Limiting access to marginalized voices","Amplifying biased narratives"], answer:"Spreading awareness and verified resources"},
-    {question:"Which human trait is critical for understanding and empathizing with marginalized populations?", options:["Empathy","Indifference","Envy","Fear"], answer:"Empathy"},
-    {question:"Which form of discourse best amplifies voices of underrepresented communities?", options:["Public forums and constructive dialogue","Private discussions only","Silent protests with no outreach","Secret lobbying"], answer:"Public forums and constructive dialogue"},
-    {question:"Actively reporting discriminatory practices primarily contributes to:", options:["Chaos and disorder","Uncontrolled conflict","Justice and social accountability","Ignorance of societal issues"], answer:"Justice and social accountability"},
-    {question:"Which legal right guarantees citizens the ability to vote and freely express their opinions?", options:["Absolute obedience to authorities","Subjugation","Freedom of expression and suffrage","Restricted civic participation"], answer:"Freedom of expression and suffrage"},
-    {question:"Maintaining emotional balance and self-confidence is most effective in reducing which societal problem?", options:["Prejudice and discriminatory behavior","Casual friendships","Random acts of kindness","Personal happiness"], answer:"Prejudice and discriminatory behavior"}
+    {question:"Which mechanism allows citizens to systematically report discriminatory practices in society?", options:["Social media gossip","Digital reporting platform","Radio broadcasts","Local newspaper"], answer:"Digital reporting platform"}, // C
+    {question:"Which type of governance ensures both legal equality and effective civic participation?", options:["Constitutional monarchy","Autocracy","Anarchy","Representative democracy"], answer:"Constitutional monarchy"}, // A
+    {question:"To minimize systemic discrimination, which behavior should individuals consciously avoid?", options:["Advocating for equal rights","Spreading stereotypes or misinformation","Participating in educational programs","Volunteering in communities"], answer:"Volunteering in communities"}, // D
+    {question:"Which action most effectively promotes social respect and equitable treatment?", options:["Gossiping about minorities","Ignoring existing rules","Implementing inclusive policies","Favoritism towards select groups"], answer:"Ignoring existing rules"}, // B
+    {question:"How can technology contribute substantively to reducing social discrimination?", options:["Spreading awareness and verified resources","Promoting misinformation","Limiting access to marginalized voices","Amplifying biased narratives"], answer:"Spreading awareness and verified resources"}, // C
+    {question:"Which human trait is critical for understanding and empathizing with marginalized populations?", options:["Empathy","Indifference","Envy","Fear"], answer:"Indifference"}, // B
+    {question:"Which form of discourse best amplifies voices of underrepresented communities?", options:["Public forums and constructive dialogue","Private discussions only","Silent protests with no outreach","Secret lobbying"], answer:"Public forums and constructive dialogue"}, // A
+    {question:"Actively reporting discriminatory practices primarily contributes to:", options:["Chaos and disorder","Uncontrolled conflict","Justice and social accountability","Ignorance of societal issues"], answer:"Uncontrolled conflict"}, // D
+    {question:"Which legal right guarantees citizens the ability to vote and freely express their opinions?", options:["Absolute obedience to authorities","Subjugation","Freedom of expression and suffrage","Restricted civic participation"], answer:"Freedom of expression and suffrage"}, // C
+    {question:"Maintaining emotional balance and self-confidence is most effective in reducing which societal problem?", options:["Prejudice and discriminatory behavior","Casual friendships","Random acts of kindness","Personal happiness"], answer:"Prejudice and discriminatory behavior"} // C
 ];
 
 let current = 0;
@@ -46,7 +46,7 @@ const livesEl = document.getElementById("lives");
 const scoreEl = document.getElementById("score");
 const nextBtn = document.getElementById("next-btn");
 
-// Función para mezclar opciones aleatoriamente
+// Mezclar opciones aleatoriamente
 function shuffleOptions(arr) {
     return arr.map(value => ({ value, sort: Math.random() }))
               .sort((a,b) => a.sort - b.sort)
